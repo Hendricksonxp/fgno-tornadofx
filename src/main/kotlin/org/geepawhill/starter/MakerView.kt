@@ -9,6 +9,7 @@ import javafx.scene.layout.Background
 import javafx.scene.layout.BackgroundFill
 import javafx.scene.paint.Color
 import tornadofx.*
+import kotlin.random.Random
 
 const val SCREEN_WIDTH = 1600.0
 const val SCREEN_HALF = SCREEN_WIDTH / 2.0
@@ -20,6 +21,9 @@ const val CAMEL_HEIGHT = 64.0
 const val CAMEL_WIDTH = 64.0
 const val SPIT_HEIGHT = 32
 const val SPIT_WIDTH = 32
+const val SPIT_X_ADJUSTMENT = 0.995
+      val SPIT_Y_ADJUSTMENT = Random.nextDouble(1.005,1.05)
+
 
 
 class Input {
@@ -125,7 +129,7 @@ class MakerView : View("Raindrops") {
 
     private fun moveSpit() {
         val x2 = spit.x *.995
-        val y2 = spit.y * 1.005
+        val y2 = spit.y * SPIT_Y_ADJUSTMENT
         spit.x = x2
         spit.y = y2
     }
