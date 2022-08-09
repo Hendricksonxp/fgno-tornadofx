@@ -10,9 +10,9 @@ import javafx.scene.layout.BackgroundFill
 import javafx.scene.paint.Color
 import tornadofx.*
 
-const val SCREEN_WIDTH = 800.0
+const val SCREEN_WIDTH = 1600.0
 const val SCREEN_HALF = SCREEN_WIDTH / 2.0
-const val SCREEN_HEIGHT = 480.0
+const val SCREEN_HEIGHT = 960.0
 const val BUCKET_WIDTH = 64.0
 const val BUCKET_HEIGHT = 64.0
 const val BUCKET_HALF = BUCKET_WIDTH / 2.0
