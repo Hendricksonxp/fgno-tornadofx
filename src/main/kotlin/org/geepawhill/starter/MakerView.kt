@@ -18,6 +18,8 @@ const val BUCKET_HEIGHT = 64.0
 const val BUCKET_HALF = BUCKET_WIDTH / 2.0
 const val CAMEL_HEIGHT = 64.0
 const val CAMEL_WIDTH = 64.0
+const val SPIT_HEIGHT = 32
+const val SPIT_WIDTH = 32
 
 
 class Input {
@@ -117,5 +119,14 @@ class MakerView : View("Raindrops") {
 
     private fun pulse(deltaTime: Double) {
         input.popTo(deltaTime, this::handleKey)
+        moveSpit()
+
+    }
+
+    private fun moveSpit() {
+        val x2 = spit.x *.995
+        val y2 = spit.y * 1.005
+        spit.x = x2
+        spit.y = y2
     }
 }
