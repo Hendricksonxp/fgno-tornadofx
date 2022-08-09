@@ -21,8 +21,8 @@ const val CAMEL_HEIGHT = 64.0
 const val CAMEL_WIDTH = 64.0
 const val SPIT_HEIGHT = 32
 const val SPIT_WIDTH = 32
-const val SPIT_X_ADJUSTMENT = 0.995
-      val SPIT_Y_ADJUSTMENT = Random.nextDouble(1.0005,1.005)
+const val SPIT_X_ADJUSTMENT = 0.9995
+      val SPIT_Y_ADJUSTMENT = Random.nextDouble(1.001,1.01)
 
 
 
@@ -129,18 +129,17 @@ class MakerView : View("Raindrops") {
     }
 
     private fun detectCapture() {
-        val xInRange = spit.x < bucket.x + 50 && spit.x > bucket.x - 50
-        val yInRange = spit.y < bucket.y + 50 && spit.y > bucket.y - 50
+        val xInRange = spit.x < bucket.x + 40 && spit.x > bucket.x - 40
+        val yInRange = spit.y < bucket.y + 40 && spit.y > bucket.y - 40
 
         if (xInRange && yInRange) {
-            print("in bucket range")
             root.background = Background(BackgroundFill(Color.CRIMSON, null, null))
             spit.toBack()
         }
     }
 
     private fun moveSpit() {
-        val x2 = spit.x *.9995
+        val x2 = spit.x * SPIT_X_ADJUSTMENT
         val y2 = spit.y * SPIT_Y_ADJUSTMENT
         spit.x = x2
         spit.y = y2
