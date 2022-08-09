@@ -135,6 +135,7 @@ class MakerView : View("Raindrops") {
         if (xInRange && yInRange) {
             print("in bucket range")
             root.background = Background(BackgroundFill(Color.CRIMSON, null, null))
+            spit.toBack()
         }
     }
 
