@@ -129,10 +129,13 @@ class MakerView : View("Raindrops") {
     }
 
     private fun detectCapture() {
-        val xInRange = spit.x < bucket.x + 60 && spit.x > bucket.x - 60
-        val yInRange = spit.y < bucket.y + 60 && spit.y > bucket.y - 60
+        val xInRange = spit.x < bucket.x + 50 && spit.x > bucket.x - 50
+        val yInRange = spit.y < bucket.y + 50 && spit.y > bucket.y - 50
 
-        if (xInRange && yInRange) print("in bucket range")
+        if (xInRange && yInRange) {
+            print("in bucket range")
+            root.background = Background(BackgroundFill(Color.CRIMSON, null, null))
+        }
     }
 
     private fun moveSpit() {
