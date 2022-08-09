@@ -1,0 +1,52 @@
+# OpenJfx + Maven + IntelliJ 2022
+
+This is a starter project. It includes one JavaFx application in `Main`, and a single and meaningless -- but runnable JUnit 5 test.
+
+This is for:
+
+* OpenJdk 18
+* OpenJfx 18
+* Junit 5.8.1
+* AssertJ 3.23
+
+It includes two run configurations, "test" and "run", which do just about what you think.
+
+The key "support files":
+
+*    pom.xml
+**        Includes the openjfx plugin
+* module-info.java
+**        This file is required to allow intellij to do "native" runs.
+* The Run Configurations
+** These are in .../.idea/runConfigurations/
+** run.xml
+** test.xml
+
+In theory, this project will run out of the box, assuming you have OpenJDK installed and either Maven installed or the intellij maven built-in turned on.
+
+## Using for a new project
+--
+
+In github, the project is marked as a "template". This means we can create a new project that is basically a complete copy of it.
+
+---
+(You can also do this manually:
+
+1. Clone the project to your drive. Make sure it works, before you bother doing anything else.
+2. Go to github and make a new project, and give it a readme, so that you can then clone it, also, to your drive.
+3. Go to your copy of open-jfx-maven-2022 and select every file _except_ the .git folder.
+4. Copy those files into your new project. You should, again, be able to build and run your new project. If so, commit it and push it, then proceed as below.)
+
+
+---
+
+1. Rename the package. Best is to right-click, "refactor", and "rename", and to apply it to the whole project. Depending on what package you change it to, you may wind up with some empty packages that are all or part of the original name. They should be empty, you can delete them.
+
+2. This will break the tests configuration. Use the combo box, edit the configuration for tests, and change the package name there, too. The tests will now work again.
+
+3. It will also break the run configuration. Use the combo box, edit the configuration for run, and change the main class setting so it points to Main in its new package. The run will now work again.
+
+4. Commit and push before you do anything cool.
+
+5. You now should have a working project. Do something cool!
+
