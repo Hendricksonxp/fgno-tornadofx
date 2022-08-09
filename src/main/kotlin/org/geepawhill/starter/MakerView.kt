@@ -16,6 +16,8 @@ const val SCREEN_HEIGHT = 960.0
 const val BUCKET_WIDTH = 64.0
 const val BUCKET_HEIGHT = 64.0
 const val BUCKET_HALF = BUCKET_WIDTH / 2.0
+const val CAMEL_HEIGHT = 64.0
+const val CAMEL_WIDTH = 64.0
 
 
 class Input {
@@ -57,6 +59,16 @@ class MakerView : View("Raindrops") {
         image = Image("/bucket.png")
     }
 
+    val camel = imageview {
+        x = 1450.0
+        y = -60.0
+        scaleX = 0.5
+        scaleY = 0.5
+        image = Image("/camel.jpeg")
+
+
+    }
+
     override val root = pane {
         minWidth = SCREEN_WIDTH
         maxWidth = SCREEN_WIDTH
@@ -71,6 +83,7 @@ class MakerView : View("Raindrops") {
             requestFocus()
         }
         this += bucket
+        this += camel
     }
 
     init {
