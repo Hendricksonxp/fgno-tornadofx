@@ -65,8 +65,14 @@ class MakerView : View("Raindrops") {
         scaleX = 0.5
         scaleY = 0.5
         image = Image("/camel.jpeg")
+    }
 
-
+    val spit = imageview {
+        x = 1475.0
+        y = 50.0
+        scaleX = 0.5
+        scaleY = 0.5
+        image = Image("/droplet.png")
     }
 
     override val root = pane {
@@ -84,6 +90,7 @@ class MakerView : View("Raindrops") {
         }
         this += bucket
         this += camel
+        this += spit
     }
 
     init {
